@@ -10,4 +10,8 @@
     To learn more, you can also browse through the documentation
     <%= link_to 'here' => '/perldoc' %>.
   % }
+  % if (config 'aleph') {
+    To learn more, you can also browse through the documentation
+    <%= link_to 'here' => 'http://opac.uic.edu.hk' %>.
+  % }
 </p>
