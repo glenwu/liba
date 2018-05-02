@@ -1,5 +1,5 @@
-% layout 'default';
-% title '测试';
+% layout 'mainLayout';
+% title ' 辅助管理系统 | Learning Resource Centre ';
 <h2><%= $msg %></h2>
 <p>
   This page was generated from the template "templates/example/welcome.html.ep"
@@ -15,7 +15,6 @@
     <%= link_to 'here' => 'http://opac.uic.edu.hk' %>.
   % }
 </p>
-
 <p>
   template click here
     <%= link_to 'here' => '/production/index.html' %>.
