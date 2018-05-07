@@ -6,7 +6,7 @@ use Liba::Model::Users;
 # This action will render a template
 sub index {
   my $self = shift;
-  $self->stash(msg => 'this is index', bodytype => 'nav-sm');
+  $self->stash(msg => 'this is index', bodytype => 'nav-sm', user => $self->session('user'));
   $self->render;
 }
 
@@ -22,7 +22,7 @@ sub login {
   return $self->render unless $self->users->check($user, $pass);
 
   $self->session(user => $user);
-  $self->flash(message => 'Thanks for logging in.');
+  $self->flash(msg => 'hello flash');
   $self->redirect_to('index');
 
     
