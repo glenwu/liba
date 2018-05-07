@@ -1,0 +1,78 @@
+% layout 'mainLayout';
+% title ' 登录 | Login ';
+    <div>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                          <div class="item active">
+                            <img src="images/lrc_5.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                          <div class="item">
+                            <img src="images/lrc_2.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                          <div class="item">
+                            <img src="images/lrc_3.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                          <div class="item">
+                            <img src="images/lrc_6.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                          <div class="item">
+                            <img src="images/lrc_7.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                          <div class="item">
+                            <img src="images/lrc_9.jpg" alt="..." class="img-thumbnail">
+                          </div>
+                        </div>
+                    </div>
+
+          <section class="login_content">
+            <form action="/" method="post">
+              <h1>辅助管理系统</h1>
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  
+              <div>
+                <input type="hidden" name="failed" value="1"/>
+                <input type="text" name="user" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="password" name="pass" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                  <p class="text-danger">
+                    % if (length($failed) > 0) {
+                        <b><%= $failed %></b><br>
+                    % }
+                  </p>
+              </div>
+              <div>
+                <button class="btn btn-primary btn-block" type="submit">Log in</button>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">New to site?
+                  <a class="to_register"  href="#" onclick="alert('打电话找Glen')"> Create Account </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+            <object data="images/uic-dark.svg" width="40" height="40" type="image/svg+xml">
+                <img src="images/uic-dark.png" />
+            </object>
+                  <p>©2018 Learning Resource Centre</p>
+                  <p>Gentelella Alela!</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+
+      </div>
+    </div>

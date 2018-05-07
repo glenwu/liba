@@ -18,14 +18,11 @@
     <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="build/css/custom.min.css" rel="stylesheet">
+    <link href="build/css/custom.css" rel="stylesheet">
+    <!-- <link href="build/css/custom.min.css" rel="stylesheet"> -->
   </head>
-  <body class="nav-sm">
-        <div class="container body">
-           <div class="main_container">
+  <body class='<%= $bodytype %>'>
            <%= content %>
-           </div>
-        </div>
           <!-- jQuery -->
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
