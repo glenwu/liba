@@ -40,6 +40,15 @@ my $GROUP_HTML = [
   '<li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page5</a></li>',
 ];
 
+my $GROUP_JSON = [
+  {"name" => "数据统计", "icon" => "fa-home", "link" => "0", "data" => [{"link" => "index.html", "name" => "Dashboard"}, {"link" => "index2.html", "name" => "Dashboard2"}]},
+  {"name" => "图书信息获取", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
+  {"name" => "参考咨询记录", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
+  {"name" => "系统管理", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
+  {"name" => "行政", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
+  {"name" => "配置", "icon" => "fa-laptop", "link" => "javascript=>void(0)"}
+];
+
 
 sub new { bless {}, shift }
 
@@ -55,6 +64,6 @@ sub check {
 
 sub privilege {
   my ($self, $user) = @_;
-  return [@$GROUP_HTML[@{$GROUP->{$PRIV->{$user}}}]];
+  return  [@$GROUP_JSON[@{$GROUP->{$PRIV->{$user}}}]] ;
 } 
 1;

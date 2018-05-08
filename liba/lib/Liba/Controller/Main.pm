@@ -1,5 +1,6 @@
 package Liba::Controller::Main;
 use Mojo::Base 'Mojolicious::Controller';
+use Mojo::JSON qw(decode_json encode_json);
 
 use Liba::Model::Users;
 
@@ -39,6 +40,15 @@ sub logout {
   my $self = shift;
   $self->session(expires => 1);
   $self->redirect_to('/');
+}
+
+# render js file
+sub custom {
+    my $self = shift;
+    # $self->stash(user => $self->session('user'));
+
+    $self->stash(msg => $self->session('user'), sidebar => $self->users->privilege($self->session('user')));
+    $self->render;
 }
 
 1;

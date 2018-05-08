@@ -26,6 +26,8 @@ sub startup {
 
   $logged_in->get('/index')->to('main#index');
   $r->get('/logout')->to('main#logout');
+
+  $r->any('js/custom')->to('main#custom')
 }
 
 1;

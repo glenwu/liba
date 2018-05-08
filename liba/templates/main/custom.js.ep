@@ -1,0 +1,12 @@
+% use Mojo::JSON qw(encode_json);
+% use Encode qw(decode_utf8);
+
+var app = new Vue({
+    el: '#app',
+    data: {
+      message: "<%= $msg %>",
+      sidebar: "<%== decode_utf8 encode_json $sidebar %>"
+    }
+  })
+
+  
