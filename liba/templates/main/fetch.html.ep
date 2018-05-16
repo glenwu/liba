@@ -31,7 +31,7 @@
               <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>图书信息输入区<small>ISBN输入时尽量超过30条</small></h2>
+                    <h2>图书信息输入区<small>ISBN输入时尽量不超过30条</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -49,40 +49,39 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                   <div class="x_content">
 
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="col-xs-2">
+                      <!-- required for floating -->
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs tabs-left text-center">
+                        <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">根据ISBN获取</a>
+                        </li>
+                        <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">题名或标签获取</a>
+                        </li>
+                        <li><a href="#messages" data-toggle="tab">Z39关键字</a>
+                        </li>
+
+                      </ul>
+                    </div>
+
+                    <div class="col-xs-10">
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                            <textarea class="form-control" style="width:140px;height:140px;resize: none;" rows="6" placeholder="ISBN多行输入"></textarea>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="profile">Profile Tab.</div>
+                        <div class="tab-pane" id="messages">Messages Tab.</div>
+                      </div>
+                    </div>
+
+                    <div class="clearfix"></div>
 
                   </div>
+
                 </div>
               </div>
 
