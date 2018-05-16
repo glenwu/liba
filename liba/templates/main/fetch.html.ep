@@ -10,7 +10,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
+                <h3>图书信息获取 <small>包括查重、查价格等功能</small></h3>
               </div>
 
               <div class="title_right">
@@ -28,10 +28,10 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Basic Tables <small>basic table subtitle</small></h2>
+                    <h2>图书信息输入区<small>ISBN输入时尽量超过30条</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -87,7 +87,7 @@
               </div>
 
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Stripped table <small>Stripped table subtitle</small></h2>
