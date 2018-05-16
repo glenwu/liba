@@ -7,7 +7,13 @@ use Liba::Model::Users;
 # This action will render a template
 sub index {
   my $self = shift;
-  $self->stash(msg => 'this is index', bodytype => 'nav-sm', user => $self->session('user'));
+  $self->stash(msg => '功能选择', bodytype => 'nav-sm', user => $self->session('user'));
+  $self->render;
+}
+
+sub fetch {
+  my $self = shift;
+  $self->stash(msg => '功能选择', bodytype => 'nav-sm', user => $self->session('user'));
   $self->render;
 }
 

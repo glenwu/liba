@@ -25,6 +25,7 @@ sub startup {
   my $logged_in = $r->under('/')->to('main#logged_in');
 
   $logged_in->get('/index')->to('main#index');
+  $logged_in->get('/fetch')->to('main#fetch');
   $r->get('/logout')->to('main#logout');
 
   $r->any('js/custom')->to('main#custom')

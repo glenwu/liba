@@ -1,11 +1,17 @@
 % use Mojo::JSON qw(encode_json);
 % use Encode qw(decode_utf8);
 
+
+Vue.component('app-sidebar',{
+  props: ['todo'],
+  template: '<li><a v-bind:href="todo.link"><i class="fa" v-bind:class="todo.icon"></i>{{todo.name}}</a></li>'
+
+})
 var app = new Vue({
     el: '#app',
     data: {
       message: "<%= $msg %>",
-      sidebar: "<%== decode_utf8 encode_json $sidebar %>"
+      sidebar: <%== decode_utf8 encode_json $sidebar %>
     }
   })
 

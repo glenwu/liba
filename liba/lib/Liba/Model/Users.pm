@@ -41,12 +41,13 @@ my $GROUP_HTML = [
 ];
 
 my $GROUP_JSON = [
-  {"name" => "数据统计", "icon" => "fa-home", "link" => "0", "data" => [{"link" => "index.html", "name" => "Dashboard"}, {"link" => "index2.html", "name" => "Dashboard2"}]},
-  {"name" => "图书信息获取", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
-  {"name" => "参考咨询记录", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
-  {"name" => "系统管理", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
-  {"name" => "行政", "icon" => "fa-laptop", "link" => "javascript=>void(0)"},
-  {"name" => "配置", "icon" => "fa-laptop", "link" => "javascript=>void(0)"}
+  # {"name" => "数据统计", "icon" => "fa-home", "link" => "0", "data" => [{"link" => "index.html", "name" => "Dashboard"}, {"link" => "index2.html", "name" => "Dashboard2"}]},
+  {"id" => "0", "name" => "图书信息获取", "icon" => "fa-download", "link" => "/fetch"},
+  {"id" => "1", "name" => "数据统计", "icon" => "fa-bar-chart", "link" => "javascript:void(0)"},
+  {"id" => "2", "name" => "参考咨询记录", "icon" => "fa-info-circle", "link" => "javascript:void(2)"},
+  {"id" => "3", "name" => "系统管理", "icon" => "fa-desktop", "link" => "javascript:void(3)"},
+  {"id" => "4", "name" => "行政", "icon" => "fa-edit", "link" => "javascript:void(4)"},
+  {"id" => "5", "name" => "配置", "icon" => "fa-cogs", "link" => "javascript:void(5)"}
 ];
 
 
