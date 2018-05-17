@@ -29,7 +29,7 @@
                     </div>
 
           <section class="login_content">
-            <form action="/" method="post">
+            <form action="/" method="post" id="app">
               <h1>辅助管理系统</h1>
               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                   

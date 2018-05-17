@@ -65,6 +65,6 @@ sub check {
 
 sub privilege {
   my ($self, $user) = @_;
-  return  [@$GROUP_JSON[@{$GROUP->{$PRIV->{$user}}}]] ;
+  return  [@$GROUP_JSON[@{$GROUP->{$PRIV->{$user}}}]] if defined $user;
 } 
 1;
