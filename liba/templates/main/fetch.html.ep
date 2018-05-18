@@ -28,7 +28,7 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>图书信息输入区<small>ISBN输入时尽量不超过30条</small></h2>
@@ -51,7 +51,7 @@
                   </div>
                    <div class="x_content">
 
-                    <div class="col-xs-2">
+                    <div class="col-xs-4">
                       <!-- required for floating -->
                       <!-- Nav tabs -->
                       <ul class="nav nav-tabs tabs-left text-center">
@@ -65,7 +65,7 @@
                       </ul>
                     </div>
 
-                    <div class="col-xs-5">
+                    <div class="col-xs-8">
                       <!-- Tab panes -->
                       <div class="tab-content">
                         <div class="tab-pane active" id="home">
@@ -73,11 +73,11 @@
                             <textarea class="form-control" style="height:142px; resize: none"rows="6" placeholder="ISBN多行输入"></textarea>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12">
-                            <div class="btn-group-vertical" role="group" aria-label="...">
-                              <span class="btn btn-sm btn-primary btn-block">测速</span>
-                              <span class="btn btn-sm btn-default btn-block">新项目</span>
-                              <span class="btn btn-sm btn-default btn-block">清除</span>
-                              <span class="btn btn-sm btn-success btn-block">获取</span>
+                            <div class="btn-group-vertical" style="margin-top: 5px" role="group" aria-label="...">
+                              <span class="btn btn-primary btn-block">测速</span>
+                              <span class="btn btn-default btn-block">新项目</span>
+                              <span class="btn btn-default btn-block">清除</span>
+                              <span class="btn btn-success btn-block">获取</span>
                             </div>
                             </div>
                         </div>
@@ -86,31 +86,6 @@
                       </div>
                     </div>
 
-                    <div class="col-xs-2">
-                        <h4 class="text-center">英文数据源</h4>
-                        <select style="height: 100px" class="select2_multiple form-control" multiple="multiple">
-                            <option selected><span class="textprimary">Google</span>[42ms]</option>
-                            <option>Amazon.com</option>
-                            <option>Calis</option>
-                            <option>国家图书馆</option>
-                            <option>Option four</option>
-                            <option>Option five</option>
-                            <option>Option six</option>
-                          </select>
-                    </div>
-
-                    <div class="col-xs-2">
-                        <h4 class="text-center">中文数据源</h4>
-                        <select style="height: 100px" class="select2_multiple form-control" multiple="multiple">
-                            <option selected>豆瓣</option>
-                            <option>amazon</option>
-                            <option>Calis</option>
-                            <option>国家图书馆</option>
-                            <option>Option four</option>
-                            <option>Option five</option>
-                            <option>Option six</option>
-                          </select>
-                    </div>
                     <div class="clearfix"></div>
 
                   </div>
@@ -119,10 +94,80 @@
               </div>
 
 
-              <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="x_panel">
+                      <div class="x_title">
+                        <h2>获取源选择区 <small>可选择不同的数据源，是否使用代理等</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                          </li>
+                          <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#">Settings 1</a>
+                              </li>
+                              <li><a href="#">Settings 2</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a class="close-link"><i class="fa fa-close"></i></a>
+                          </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="x_content">
+                            <div class="col-xs-2">
+                                    <div id="gender" class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-sm btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                        <input type="radio" name="gender" value="male" data-parsley-multiple="gender"> 中
+                                    </label>
+                                    <label class="btn btn-sm btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                        <input type="radio" name="gender" value="female" data-parsley-multiple="gender"> 英
+                                    </label>
+                                    </div>
+                                    <div class="checkbox">
+                                         <input type="checkbox" class="flat"> 用代理
+                                    </div>
+                                    <div class="checkbox">
+                                         <input type="checkbox" class="flat"> Z39 
+                                    </div>
+        
+                            </div>
+
+        
+                            <div class="col-xs-5">
+                                <h4 class="text-center" style="margin-top: 0px">英文数据源</h4>
+                                <select style="height: 115px" class="select2_multiple form-control" multiple="multiple">
+                                    <option selected><span class="textprimary">Google</span>[42ms]</option>
+                                    <option>Amazon.com</option>
+                                    <option>Goodread</option>
+                                    <option>国家图书馆</option>
+                                    <option>Calis</option>
+                                    <option>Option five</option>
+                                    <option>Option six</option>
+                                  </select>
+                            </div>
+
+        
+                            <div class="col-xs-5">
+                                <h4 class="text-center" style="margin-top: 0px">中文数据源</h4>
+                                <select style="height: 115px" class="select2_multiple form-control" multiple="multiple">
+                                    <option selected>豆瓣</option>
+                                    <option>amazon</option>
+                                    <option>Calis</option>
+                                    <option>国家图书馆</option>
+                                    <option>Option four</option>
+                                    <option>Option five</option>
+                                    <option>Option six</option>
+                                  </select>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="col-md-2 col-sm-2 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Stripped table <small>Stripped table subtitle</small></h2>
+                    <h2>保存的项目</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
