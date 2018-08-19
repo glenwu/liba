@@ -1,6 +1,16 @@
 % use Mojo::JSON qw(encode_json);
 % use Encode qw(decode_utf8);
 
+//prefixes of implementation that we want to test
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+//prefixes of window.IDB objects
+window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
+
+if (!window.indexedDB) {
+  window.alert("正在使用过时浏览器，不专业")
+}
 
 Vue.component('app-sidebar',{
   props: ['todo'],
@@ -13,6 +23,21 @@ var app = new Vue({
       message: "<%= $msg %>",
       sidebar: <%== decode_utf8 encode_json $sidebar %>
     }
+
   })
+
+var fetchapp = new Vue({
+  el: '#fetchapp',
+  data: {
+    
+  },
+  methods: {
+    greet: function (event) {
+      
+      
+      console.log("hello glenwu")
+    }
+  }
+})
 
   
