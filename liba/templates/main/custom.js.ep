@@ -12,6 +12,33 @@ if (!window.indexedDB) {
   window.alert("正在使用过时浏览器，不专业")
 }
 
+var db;
+var request = window.indexedDB.open("BookData",4);
+
+const detailData = [
+];
+
+request.onerror = function(event) {
+  console.log("error: ");
+};
+
+request.onsuccess = function(event) {
+  db = request.result;
+  console.log("success: "+ db);
+
+};
+
+request.onupgradeneeded = function(event) {
+  var db = event.target.result;
+  var objectStore = db.createObjectStore("itemdetail", {keyPath: "id"});
+  objectStore.createIndex("isbn","isbn",{unique: true});
+  objectStore.createIndex("title","title",{unique: false});
+
+  for (var i in detailData) {
+    objectStore.add(detailData[i]);
+  }
+}
+
 Vue.component('app-sidebar',{
   props: ['todo'],
   template: '<li><a v-bind:href="todo.link"><i class="fa" v-bind:class="todo.icon"></i>{{todo.name}}</a></li>'
@@ -28,14 +55,108 @@ var app = new Vue({
 
 var fetchapp = new Vue({
   el: '#fetchapp',
-  data: {
-    
+  data() {
+    // return {
+    //   itemdetail: {
+    //     id: null,
+    //     isbn: null,
+    //     title: null,
+    //     serial: null,
+    //     author: null,
+    //     publisher: null,
+    //     price: null
+    //   },
+      return {
+        itemdetail: {
+          id: null,
+          isbn: "9787508656151",
+          title: "匠人精神",
+          serial: null,
+          author: "秋山利辉",
+          publisher: "中信出版社",
+          price: "CNY 36.00"
+        },
+        
+      itemdetails: [],
+      retryCount: 0,
+    }
+  },
+  mounted(){
+    this.readAll()
   },
   methods: {
     greet: function (event) {
-      
-      
       console.log("hello glenwu")
+    },
+    add(itemdetail){
+      var vm = this;
+      let request = new Promise((resolve, reject) => {
+        var request = db.transaction(["itemdetail"], "readwrite")
+        .objectStore("itemdetail").add({ 
+          id: itemdetail.id != null ? itemdetail.id : vm.itemdetails.length++ ,
+          isbn: itemdetail.isbn, 
+          title: itemdetail.title, 
+          serial:itemdetail.serial, 
+          author:itemdetail.author, 
+          publisher:itemdetail.publisher, 
+          price:itemdetail.price 
+        })
+        request.onsuccess = function(event) {
+          vm.itemdetails.push({ 
+            edit: false,
+            id: itemdetail.id != null ? vm.itemdetail.id : vm.itemdetails.length++ ,
+            isbn: itemdetail.isbn, 
+            title: itemdetail.title, 
+            serial:itemdetail.serial, 
+            author:itemdetail.author, 
+            publisher:itemdetail.publisher, 
+            price:itemdetail.price 
+          })
+        }
+        request.onerror = function(event) {
+          alert("Unable to add data ");
+        }
+      })
+    },
+    readAll(){
+      var vm = this;  
+      try {
+        vm.itemdetails = []
+        var objectStore = db.transaction("itemdetail").objectStore("itemdetail");
+        if(objectStore){
+          console.log("开始取数据");
+          objectStore.openCursor().onsuccess = function(event) {
+            var cursor = event.target.result;
+
+            if (cursor) {
+              if(vm.itemdetails){
+                vm.itemdetails.push({ edit: false,  
+                  id: cursor.key , 
+                  isbn: cursor.value.isbn , 
+                  title:cursor.value.title, 
+                  serial:cursor.value.serial,
+                  author: cursor.value.author , 
+                  publisher:cursor.value.publisher, 
+                  price:cursor.value.price,
+                });
+              }else{
+                console.log("没有数据了")
+                
+                
+              }
+              cursor.continue();
+
+            }
+          };
+        }
+      }catch(e){
+        console.log(e)
+        vm.retryDisp()
+      }
+
+    },
+    retryDisp() {
+      console.log("有问题")
     }
   }
 })
